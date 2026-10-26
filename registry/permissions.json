@@ -38,23 +38,36 @@
       "grants": {
         "Employee": [
           "leave_elm.application.apply",
+          "leave_elm.application.cancel",
+          "leave_elm.application.view",
+          "leave_elm.application.withdraw"
+        ],
+        "HOD": [
+          "leave_elm.application.approve",
+          "leave_elm.application.cancel",
           "leave_elm.application.view"
         ],
         "Leave Approver": [
           "leave_elm.application.approve",
+          "leave_elm.application.cancel",
           "leave_elm.application.view"
         ],
         "faculty": [
           "leave_elm.application.apply",
-          "leave_elm.application.view"
+          "leave_elm.application.cancel",
+          "leave_elm.application.view",
+          "leave_elm.application.withdraw"
         ],
         "staff": [
           "leave_elm.application.apply",
-          "leave_elm.application.view"
+          "leave_elm.application.cancel",
+          "leave_elm.application.view",
+          "leave_elm.application.withdraw"
         ]
       },
       "module_grants": [
         "Employee",
+        "HOD",
         "Leave Approver",
         "faculty",
         "staff"
@@ -66,7 +79,7 @@
           {
             "code": "leave.applications",
             "icon": "FaCalendarAlt",
-            "label": "Leave Requests",
+            "label": "My Leave",
             "required_permission": "leave_elm.application.view",
             "sort_order": 10,
             "to": "/leave/applications"
@@ -74,7 +87,7 @@
           {
             "code": "leave.approvals",
             "icon": "FaCheckCircle",
-            "label": "Sanction Queue",
+            "label": "Approvals",
             "required_permission": "leave_elm.application.approve",
             "sort_order": 20,
             "to": "/leave/approvals"
@@ -88,15 +101,23 @@
       "permissions": [
         {
           "code": "leave_elm.application.view",
-          "label": "View leave requests and balances"
+          "label": "See leave applications and balances"
         },
         {
           "code": "leave_elm.application.apply",
-          "label": "Submit a leave request"
+          "label": "Submit a leave application"
         },
         {
           "code": "leave_elm.application.approve",
-          "label": "Sanction or reject a leave request"
+          "label": "Approve or reject a leave application"
+        },
+        {
+          "code": "leave_elm.application.withdraw",
+          "label": "Withdraw a pending leave application"
+        },
+        {
+          "code": "leave_elm.application.cancel",
+          "label": "Cancel an approved leave application"
         }
       ],
       "scope_permissions": [],
